@@ -14,7 +14,7 @@ const Doctors = ({ data }) => {
         </p>
       </div>
 
-      <div className='bg-gray-50 p-0 rounded-2xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-25 mb-15'>
+      <div className='bg-gray-50 p-10 rounded-2xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-25 mb-15'>
         <Suspense fallback={<span className="loading loading-ring loading-xl"></span>}>
           {
           data.map((singelDoctor) => (<Doctor key={singelDoctor.id} singelDoctor={singelDoctor}></Doctor>))

@@ -1,10 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router";
 import { useLoaderData, useParams } from "react-router";
+import { ToastContainer, toast } from "react-toastify";
 
 const DoctorDetails = () => {
   const { id } = useParams();
   const doctorId = parseInt(id);
   const data = useLoaderData();
+  const navigate = useNavigate();
 
   const singelDoctor = data.find((doctor) => doctor.id === doctorId);
 
@@ -19,11 +22,32 @@ const DoctorDetails = () => {
     availability,
   } = singelDoctor;
 
+
+
+  const notify = () => toast(`Appointment schedule for ${name} Successfully`);
+
+
+  const handleBooking = () => {
+
+    const alreadyBooked = localStorage.getItem("bookedDoctor");
+    if (alreadyBooked == id) {
+      toast.error("You have already booked this doctor!");
+      return; 
+    }
+
+    notify();
+    localStorage.setItem("bookedDoctor", id);
+    setTimeout(() => {
+      navigate("/booking");
+    }, 2000);
+  };
+
+
+
+
   return (
     <div>
-
       <div className="max-w-4xl mx-auto bg-white shadow-xl rounded-2xl overflow-hidden my-10 grid grid-cols-1 md:grid-cols-2">
-        
         <div className="flex flex-col items-center p-6 border-r">
           <img
             src={image}
@@ -64,58 +88,27 @@ const DoctorDetails = () => {
           </div>
         </div>
 
-      
         <div className="bg-gray-50 p-6">
-          <h3 className="text-2xl font-bold text-center mb-6 text-blue-700">
-            Book Appointment
+          <h3 className="text-2xl font-bold text-center  mb-6 text-blue-700">
+            Book an Appointment
           </h3>
 
-          <form className="space-y-4">
-            <div>
-              <label className="block font-semibold mb-1">Your Name</label>
-              <input
-                type="text"
-                className="w-full border rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                placeholder="Enter your name"
-              />
-            </div>
+          <div className="flex justify-between font-bold mt-10 mb-8">
+            <p>Availability: </p>
+            <p className="text-green-500">Doctor Available Today</p>
+          </div>
 
-            <div>
-              <label className="block font-semibold mb-1">Phone Number</label>
-              <input
-                type="text"
-                className="w-full border rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                placeholder="Enter phone number"
-              />
-            </div>
-
-            <div>
-              <label className="block font-semibold mb-1">Select Date</label>
-              <input
-                type="date"
-                className="w-full border rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-              />
-            </div>
-
-            <div>
-              <label className="block font-semibold mb-1">Select Time</label>
-              <select className="w-full border p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
-                <option>10:00 AM</option>
-                <option>12:00 PM</option>
-                <option>2:00 PM</option>
-                <option>4:00 PM</option>
-                <option>6:00 PM</option>
-              </select>
-            </div>
-
+          <div className="mt-20">
             <button
               type="submit"
+              onClick={handleBooking}
               className="w-full bg-blue-600 text-white py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition"
             >
               Confirm Booking
             </button>
-          </form>
+          </div>
         </div>
+        <ToastContainer />
       </div>
     </div>
   );
