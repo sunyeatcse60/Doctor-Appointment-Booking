@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "question": "What are the early symptoms of diabetes?",
+    "answer": "Increased thirst, frequent urination, unexplained weight loss, fatigue, and blurred vision are common early signs of diabetes."
+  },
+  {
+    "id": 2,
+    "question": "How much water should an adult drink daily?",
+    "answer": "An average adult should drink 2-3 liters of water per day, depending on activity level and climate."
+  },
+  {
+    "id": 3,
+    "question": "What causes high blood pressure?",
+    "answer": "High sodium intake, stress, lack of exercise, obesity, alcohol, and genetics are common causes of hypertension."
+  },
+  {
+    "id": 4,
+    "question": "Is fever itself dangerous?",
+    "answer": "Fever is usually a normal immune response. However, very high fever (above 103°F/39.4°C) can be dangerous and requires medical attention."
+  },
+  {
+    "id": 5,
+    "question": "How can I boost my immunity naturally?",
+    "answer": "Adequate sleep, balanced diet, vitamins, regular exercise, hydration, and low stress help naturally strengthen immunity."
+  },
+  {
+    "id": 6,
+    "question": "What are common symptoms of vitamin D deficiency?",
+    "answer": "Fatigue, muscle weakness, bone pain, hair loss, and frequent infections may indicate vitamin D deficiency."
+  },
+  {
+    "id": 7,
+    "question": "How often should I get a health checkup?",
+    "answer": "Adults should get a general health checkup at least once a year, and more frequently if they have chronic conditions."
+  },
+  {
+    "id": 8,
+    "question": "What is the normal blood pressure range?",
+    "answer": "A normal blood pressure is around 120/80 mmHg. Values above 140/90 indicate hypertension."
+  },
+  {
+    "id": 9,
+    "question": "Can stress cause physical illness?",
+    "answer": "Yes, long-term stress can cause headaches, high blood pressure, digestive issues, weakened immunity, and mental health problems."
+  },
+  {
+    "id": 10,
+    "question": "What foods are best for heart health?",
+    "answer": "Leafy greens, whole grains, fish rich in omega-3, nuts, seeds, berries, and olive oil support heart health."
+  }
+]
